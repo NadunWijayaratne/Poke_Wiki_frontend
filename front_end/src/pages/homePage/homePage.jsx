@@ -1,16 +1,16 @@
-import CustomPaginationActionsTable from "./components/pokeTable";
 import Searchbar from "./components/searchBar";
-import useAccessData from "../../hooks/useAccessData";
-import { Box, Stack } from "@mui/material";
+import useDataGetter from "../../hooks/useDataGetter";
+import TableComp from "./components/tableComp";
 
 export default function MainPage() {
-  const url = "localhost:3001/pokedata";
-  
+  const url = "http://localhost:3000/pokedata";
+  const { pokemondata } = useDataGetter(url);
+  console.log({ pokemondata });
+
   return (
     <div>
       <Searchbar />
-      
-      <CustomPaginationActionsTable />
+      <TableComp />
     </div>
   );
 }

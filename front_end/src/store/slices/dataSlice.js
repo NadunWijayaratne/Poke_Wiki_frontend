@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  pokemondata: null,
-  pokemondetails: null,
+  pokemondata: [],
+  pokemondetails: [],
+  isLoading: null,
+  searchKey: "all",
 };
 
 const dataSlice = createSlice({
@@ -12,11 +14,18 @@ const dataSlice = createSlice({
     setAllPokemon: (state, action) => {
       state.pokemondata = action.payload;
     },
-    detailsPokemon: (state, action) => {
+    setDetailsPokemon: (state, action) => {
       state.poke;
+    },
+    setLoading: (state, action) => {
+      state.pokemondata = action.payload;
+    },
+    setSearchKey: (state, action) => {
+      state.searchKey = action.payload;
     },
   },
 });
 
-export const { setAllPokemon } = dataSlice.actions;
+export const { setAllPokemon, setDetailsPokemon, setSearchKey } =
+  dataSlice.actions;
 export default dataSlice.reducer;
