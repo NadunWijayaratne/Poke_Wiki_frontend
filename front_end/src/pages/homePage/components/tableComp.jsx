@@ -24,13 +24,15 @@ export default function TableComp() {
       <Box>
         {pokemondata.map((pokemon) => (
           <List key={pokemon.name}>
-            <ListItem alignItems="flex-start">
+            <ListItem className="pokemonlist/styles" alignItems="flex-start">
               <ListItemText
                 primary={pokemon.name}
                 secondary={
                   <React.Fragment>
-                    <Typography>Description: {pokemon.description}</Typography>
-                    <Typography>Type: {pokemon.type}</Typography>
+                    <Typography paddingTop={5}>Description:</Typography>
+                    <Typography maxWidth={400}>
+                      {pokemon.description}
+                    </Typography>
                   </React.Fragment>
                 }
               />
@@ -38,6 +40,7 @@ export default function TableComp() {
                 edge="end"
                 secondary={
                   <React.Fragment>
+                    <Typography paddingTop={8}>Type: {pokemon.type}</Typography>
                     <Typography>Hp: {pokemon.hp}</Typography>
                     <Typography>Attack: {pokemon.atk}</Typography>
                     <Typography>Defence: {pokemon.def}</Typography>
