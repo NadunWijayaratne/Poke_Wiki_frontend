@@ -69,9 +69,9 @@ function EditPoke() {
     if (pokemondetails) {
       setName(pokemondetails.name);
       setDescription(pokemondetails.description);
-      setHp(pokemondetails.health);
-      setAtk(pokemondetails.attack);
-      setDef(pokemondetails.defense);
+      setHp(pokemondetails.hp);
+      setAtk(pokemondetails.atk);
+      setDef(pokemondetails.def);
     } else {
       navigate("/");
     }
