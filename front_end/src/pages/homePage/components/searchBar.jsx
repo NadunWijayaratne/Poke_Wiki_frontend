@@ -1,4 +1,4 @@
-import { Box, TextField, Button } from "@mui/material";
+import { TextField, Button, Stack } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { setSearchKey } from "../../../store/slices/dataSlice";
@@ -21,7 +21,7 @@ export default function Searchbar() {
     }
   }
   return (
-    <Box>
+    <Stack spacing={5}>
       <TextField
         className="searchbar"
         label="Search..."
@@ -31,6 +31,6 @@ export default function Searchbar() {
         }}
       />
       <Button onClick={handleSearch}>Search</Button>
-    </Box>
+    </Stack>
   );
 }
