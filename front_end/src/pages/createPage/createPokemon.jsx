@@ -35,12 +35,12 @@ function CreatePokemon() {
   async function postDate() {
     const response = await axios
       .post("http://localhost:3000/pokedata", {
-        name: data.name,
-        description: data.desc,
-        type: data.type,
-        hp: +data.hp,
-        atk: +data.atk,
-        def: +data.def,
+        name: name,
+        description: desc,
+        type: type,
+        hp: +hp,
+        atk: +atk,
+        def: +def,
       })
       .then(function (response) {
         if (response.status == 201) {
@@ -69,8 +69,8 @@ function CreatePokemon() {
       <Box>
         <Stack>
           <Box>
-            <Typography>Add pokemon details</Typography>
             <Stack>
+              <Typography>Add pokemon details</Typography>
               <TextField
                 label="Name"
                 variant="outlined"
